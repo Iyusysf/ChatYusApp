@@ -9,8 +9,13 @@ import Notfound from "./pages/404";
 import Private from "./pages/private";
 import PrivateRoute from './components/privateRoute';
 import FirebaseProvider from "./components/FirebaseProvider";
+import {ThemeProvider} from '@material-ui/core/styles';
+import Theme from './config/Theme';
+
+
 export default function App() {
   return (
+<ThemeProvider theme={Theme}>
 <FirebaseProvider>
     <Router>
       <Switch>
@@ -26,5 +31,6 @@ export default function App() {
       </Switch>
     </Router>
     </FirebaseProvider>
+    </ThemeProvider>
   );
 }

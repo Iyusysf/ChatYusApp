@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function Login() {
-  return <h1>Halaman Login</h1>;
+  return <h1 className="red">Halaman Login</h1>;
 }
