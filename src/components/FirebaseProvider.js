@@ -8,7 +8,10 @@ firebase.initializeApp(firebaseConfig);
 
 export const auth = firebase.auth();
 const FirebaseContext = React.createContext();
+export function useFirebase(){
+return React.useContext (FirebaseContext);
 
+}
 export default function FirebaseProvider(props) {
   const { user, loading } = useAuthState(auth);
   if (loading){

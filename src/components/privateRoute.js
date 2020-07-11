@@ -1,17 +1,16 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
+//import {useFirebase} from "./FirebaseProvider";
+export default function privateRoute({component: Component,...restProps}= props) {
+  
+  const user = true;
 
-export default function PrivateRote({
-  component: Component,
-  ...restProps
-} = props) {
-  const isAutenticated = true;
 
   return (
     <Route
       {...restProps}
       render={props => {
-        return isAutenticated ? (
+        return user ? (
           <Component {...props} />
         ) : (
           <Redirect
